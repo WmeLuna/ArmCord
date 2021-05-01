@@ -32,6 +32,7 @@ function createWindow() {
 app.whenReady().then(() => {
   createWindow()
   session.defaultSession.loadExtension(`${require('electron').app.getAppPath()}/goosemod/`)
+  session.defaultSession.loadExtension(`${require('electron').app.getAppPath()}/botlogin/`)
   
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
