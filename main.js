@@ -2,6 +2,8 @@
 const { app, BrowserWindow, session } = require('electron')
 const path = require('path')
 require("v8-compile-cache");
+require("update-electron-app")();
+require("./menu.js");
 let mainWindow
 
 function createWindow() {
