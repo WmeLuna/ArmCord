@@ -19,7 +19,10 @@ function createWindow() {
   })
 
   mainWindow.loadFile('index.html')
-
+ mainWindow.webContents.on("new-window", function (e, url) {
+   e.preventDefault();
+   require("electron").shell.openExternal(url);
+ });
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 
