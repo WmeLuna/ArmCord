@@ -38,7 +38,17 @@ app.whenReady().then(() => {
   createWindow()
   session.defaultSession.loadExtension(`${require('electron').app.getAppPath()}/goosemod/`)
   session.defaultSession.loadExtension(`${require('electron').app.getAppPath()}/botlogin/`)
-  
+  session
+    .fromPartition("some-partition")
+    .setPermissionRequestHandler((webContents, permission, callback) => {
+      const url = webContents.getURL(); //unused?
+
+      if (permission === "notifications") {
+        // Approves the permissions request
+        callback(true);
+      
+      }
+    });
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.

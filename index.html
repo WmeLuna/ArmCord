@@ -45,6 +45,20 @@
       max-width: 204px;
 
     }
+    .align-right {
+
+      text-align: center;
+      border: 0;
+    }
+    .centered {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      /* bring your own prefixes */
+      transform: translate(-50%, -50%);
+      max-height: 204px;
+      max-width: 204px;
+    }
   </style>
   <style>
     body {
@@ -57,10 +71,7 @@
   <video autoplay loop class=center>
     <source src="https://discord.com/assets/0bdc0497eb3a19e66f2b1e3d5741634c.webm" type="video/webm">
   </video>
-
-  <h1>ArmCord</h1>
-  <h1>Discord will load in few seconds.</h1>
-  <div class="align-right">
+    <div class="align-right">
     <button id="myButton" class="botlogin">Login Using Bot Token</button>
     </div>
 
@@ -70,8 +81,6 @@
       location.href = "https://discordbotclient.jtmaveryk.repl.co";
       };
       </script>
-
-
 </body>
 
 </html>
