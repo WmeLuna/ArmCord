@@ -4,7 +4,6 @@ const path = require("path");
 const contextMenu = require("electron-context-menu");
 const os = require("os");
 require("v8-compile-cache");
-require("./utils/updater");
 
 if (os.type() == 'Linux'){
   var iconformat = __dirname + "/discord.png" 
@@ -41,7 +40,7 @@ function createWindow() {
 
   var appIcon = new Tray(iconformat);
   mainWindow.webContents.userAgent =
-    "Mozilla/5.0 (X12; FreeBSD x86) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"; //fake useragent
+    "Mozilla/5.0 (X12; Linux ARM) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"; //fake useragent
   mainWindow.loadFile("index.html");
   mainWindow.focus();
   mainWindow.webContents.on("new-window", function (e, url) {
