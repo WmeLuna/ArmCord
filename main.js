@@ -72,7 +72,7 @@ function createWindow() {
       },
     },
   ]);
-
+  
   appIcon.setContextMenu(contextMenu);
 
   // Emitted when the window is closed.
